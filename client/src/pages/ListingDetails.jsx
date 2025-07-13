@@ -104,7 +104,7 @@ const ListingDetails = () => {
         </div>
 
         <div className="photos">
-          {listing.listingPhotoPaths?.map((item) => (
+          {listing.listingPhotoPath?.map((item) => (
             <img
               src={`https://dream-nest-website.onrender.com/${item.replace("public", "")}`}
               alt="listing photo"
