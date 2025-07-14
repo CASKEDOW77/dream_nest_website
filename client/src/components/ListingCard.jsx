@@ -50,7 +50,7 @@ const ListingCard = ({
   const patchWishList = async () => {
     if (user?._id !== creator._id) {
     const response = await fetch(
-      `https://dream-nest-website.onrender.com/${user?._id}/${listingId}`,
+      `https://dream-nest-website.onrender.com/users/${user?._id}/${listingId}`,
       {
         method: "PATCH",
         header: {
@@ -60,6 +60,8 @@ const ListingCard = ({
     );
     const data = await response.json();
     dispatch(setWishList(data.wishList));
+    console.log(data.wishList);
+    
   } else { return }
   };
 
