@@ -14,6 +14,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
 
+app.get("/ping", (req, res) => {
+  res.send("Backend is alive");
+});
+
 /* ROUTES */
 app.use("/auth", authRoutes);
 app.use("/properties", listingRoutes);
