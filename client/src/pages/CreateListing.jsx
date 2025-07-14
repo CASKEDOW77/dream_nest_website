@@ -382,12 +382,12 @@ const CreateListing = () => {
 
             <h3>Add some photos of your place</h3>
             <DragDropContext onDragEnd={handleDragPhoto}>
-              <Droppable droppableId="photos" direction="horizontal">
+              <Droppable droppableId={"photos-droppable"} direction="horizontal">
                 {(provided) => (
                   <div
+                    ref={provided.innerRef}
                     className="photos"
                     {...provided.droppableProps}
-                    ref={provided.innerRef}
                   >
                     {photos.length < 1 && (
                       <>
@@ -439,6 +439,9 @@ const CreateListing = () => {
                             </Draggable>
                           );
                         })}
+
+                        {provided.placeholder}
+
                         <input
                           id="image"
                           type="file"
